@@ -1,0 +1,12 @@
+importers:
+  .:
+    dependencies:
+      workspace-a: link:packages/workspace-a
+    specifiers:
+      workspace-a: workspace:^1.0.0
+  packages/workspace-b:
+    dependencies:
+      workspace-a: link:../workspace-a
+    specifiers:
+      workspace-a: workspace:^1.0.0
+lockfileVersion: 5.2
