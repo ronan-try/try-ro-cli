@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ronan-try/try-ro-cli/issues"
   },
-  "homepage": "https://github.com/ronan-try/try-ro-cli#readme"
+  "homepage": "https://github.com/ronan-try/try-ro-cli#readme",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }
