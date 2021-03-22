@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ronan-try/try-ro-cli#readme",
   "dependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "lodash": "^4.17.21"
   }
 }
