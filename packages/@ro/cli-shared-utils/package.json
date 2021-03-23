@@ -1,5 +1,5 @@
 {
-  "name": "cli-shared-utils",
+  "name": "@ro/cli-shared-utils",
   "version": "1.0.0",
   "description": "ro cli shared utils",
   "main": "index.js",
