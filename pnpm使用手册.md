@@ -1,0 +1,11 @@
+## pnpm 常用手册
+
+1. 全项目添加
+```node
+ pnpm add xxxx -w
+```
+2. 某项目添加 
+```node
+cd 某项目
+pnpm add xxx 
+```
