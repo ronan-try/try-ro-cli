@@ -23,6 +23,11 @@ importers:
       lodash: ^4.17.21
       ts-node: ^9.1.1
       typescript: ^4.2.3
+  packages/@ro/cli-cache:
+    dependencies:
+      '@ro/cli-shared-utils': link:../cli-shared-utils
+    specifiers:
+      '@ro/cli-shared-utils': workspace:^1.0.0
   packages/workspace-b:
     dependencies:
       workspace-a: link:../workspace-a

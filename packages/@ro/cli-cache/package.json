@@ -1,0 +1,14 @@
+{
+  "name": "@ro/cli-cache",
+  "version": "1.0.0",
+  "description": "1. 存放缓存文件\r 2. 提供 cache文件相关操作",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ronan",
+  "license": "MIT",
+  "dependencies": {
+    "@ro/cli-shared-utils": "workspace:^1.0.0"
+  }
+}
