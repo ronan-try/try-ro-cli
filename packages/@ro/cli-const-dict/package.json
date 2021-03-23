@@ -1,11 +1,8 @@
 {
-  "name": "cli-const-dict",
+  "name": "@ro/cli-const-dict",
   "version": "1.0.0",
   "description": "ro cli的常量字典",
   "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
   "author": "Ronan",
   "license": "MIT"
 }
