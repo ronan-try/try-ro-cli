@@ -1,0 +1,14 @@
+{
+  "name": "cli-shared-utils",
+  "version": "1.0.0",
+  "description": "ro cli shared utils",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Ronan",
+  "license": "MIT"
+}
