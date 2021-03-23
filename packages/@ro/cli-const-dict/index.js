@@ -1,25 +1,23 @@
-const { trimOnlyEnd } = require('@ro/cli-shared-utils');
-const { resolve } = require('path');
-const pathLib = resolve(__dirname, './lib');
+export { RoCliGitUpstream, OriginGitUpstream } from './Gits';
 
-export { gi } from './lib/Gits';
+export { WebsocktPath } from './Paths';
 
+export { GitPlatform, OSPlatform } from './Platforms';
 
-(() => {
-  try {
-    const fileNames = require('fs').readdirSync(pathLib);
+export { UiPort, WsPort } from './Ports';
 
-    if (!Array.isArray(fileNames)) throw new Error('cli-const-dict 无lib');
-    if (fileNames.length === 0) throw new Error('cli-const-dist lib文件夹无文件');
+export { SplitChar } from './Utils';
 
-    fileNames.forEach(fileName => {
-      // const keyName = trimOnlyEnd(fileName, '.js');
-      // const filePath = resolve(__dirname, './lib/' + fileName);
-      // // module.exports[keyName] = require(filePath);
-
-      // console.log(fileName, '-----', keyName);
-    });
-  } catch (error) {
-    throw new Error('cli-const-dict 读取lib文件失败')
-  }
-})();
+export {
+  Connected,
+  Test,
+  CacheProjects,
+  AddTargetUpstream,
+  FetchRocliUpstream,
+  GitBranchR,
+  GitFork,
+  GitTrack,
+  GitSync,
+  OpenWithVSCode,
+  OpenWithFolder,
+} from './WsMessageTypes';
