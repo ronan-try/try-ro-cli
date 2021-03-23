@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "ro cli的常量字典",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Ronan",
   "license": "MIT"
