@@ -9,3 +9,8 @@
 cd 某项目
 pnpm add xxx 
 ```
+
+3. 全局添加
+```node
+pnpm add xxx --global
+```
