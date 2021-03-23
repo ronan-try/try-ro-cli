@@ -1,4 +1,4 @@
-const { trimOnlyEnd } = require('../trimOnlyEnd');
+import { trimOnlyEnd } from '../index';
 
 test('jsjs.js => jsjs', () => {
   const result = trimOnlyEnd('jsjs.js', '.js');
