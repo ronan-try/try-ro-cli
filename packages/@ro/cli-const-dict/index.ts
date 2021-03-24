@@ -1,23 +1,23 @@
-export { RoCliGitUpstream, OriginGitUpstream } from './lib/Gits';
+export { ROCLI_GIT_UPSTREAM, ORIGIN_GIT_UPSTREAM } from './lib/Gits';
 
-export { WebsocktPath } from './lib/Paths';
+export { WEBSOCKT_PATH } from './lib/Paths';
 
-export { GitPlatform, OSPlatform } from './lib/Platforms';
+export { GIT_PLATFORMS, OS_PLATFORMS } from './lib/Platforms';
 
-export { UiPort, WsPort } from './lib/Ports';
+export { UI_PORT, WS_PORT } from './lib/Ports';
 
-export { SplitChar } from './lib/Utils';
+export { SPLIT_CHAR } from './lib/Utils';
 
 export {
-  Connected,
-  Test,
-  CacheProjects,
-  AddTargetUpstream,
-  FetchRocliUpstream,
-  GitBranchR,
-  GitFork,
-  GitTrack,
-  GitSync,
-  OpenWithVSCode,
-  OpenWithFolder,
+  CONNECTED,
+  TEST,
+  CACHE_PROJECTS,
+  ADD_TARGET_UPSTREAM,
+  FETCH_ROCLI_UPSTREAM,
+  GIT_BRANCH_R,
+  GIT_FORK,
+  GIT_TRACK,
+  GIT_SYNC,
+  OPEN_WITH_VSCODE,
+  OPEN_WITH_FOLDER,
 } from './lib/WsMessageTypes';
