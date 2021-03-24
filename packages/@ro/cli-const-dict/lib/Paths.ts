@@ -1,3 +1,3 @@
 
 /** websockt 文件路径 */
-export const WebsocktPath = '/cli-ws';
+export const WEBSOCKT_PATH = '/cli-ws';

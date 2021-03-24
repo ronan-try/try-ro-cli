@@ -1,3 +1,3 @@
 
 /** 字符串 分割符 */
-export const SplitChar = '~~~~';
+export const SPLIT_CHAR = '~~~~';
