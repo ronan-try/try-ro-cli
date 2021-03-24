@@ -94,4 +94,45 @@ del.sync('./lib');
 export default [
   ...chunk('trimOnlyEnd', 'trimOnlyEnd'),
   ...chunk('chalkText', 'chalkText'),
+  {
+    input: path.resolve(`./index.ts`),
+    output: [
+      {
+        file: path.resolve(`./lib/index.js`),
+        format: 'umd',
+        name: 'index',
+        globals,
+      },
+      {
+        file: path.resolve(`./lib/mini/index.js`),
+        format: 'umd',
+        name: 'index',
+        compact: true,
+        plugins: [
+          terser(),
+        ],
+        sourcemap: true,
+        globals,
+      },
+    ],
+    external,
+    plugins: [
+      typescript(),
+      nodeResolve(
+        {
+          extensions,
+          modulesOnly: true,
+          preferredBuiltins: false
+        }
+      ),
+      commonjs(),
+      babel({
+        exclude: 'node_modules/**',
+        extensions,
+        babelHelpers: 'bundled',
+      }),
+      sourcemaps(),
+      // dts(),
+    ],
+  }
 ]
