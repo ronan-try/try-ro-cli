@@ -1,7 +1,7 @@
 
 /** ui 端口 */
-export const UiPort = 54181;
+export const UI_PORT = 54181;
 
 /** ws 端口 */
-export const WsPort = 54180;
+export const WS_PORT = 54180;
 
