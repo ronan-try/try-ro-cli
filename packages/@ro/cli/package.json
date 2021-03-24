@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "ro": "bin/ro.ts"
+    "ro": "bin/ro.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

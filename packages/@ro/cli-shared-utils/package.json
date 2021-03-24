@@ -2,6 +2,11 @@
   "name": "@ro/cli-shared-utils",
   "version": "1.0.0",
   "description": "ro cli shared utils",
+  "private": true,
+  "files": [
+    "lib",
+    "src"
+  ],
   "main": "index.ts",
   "directories": {
     "lib": "lib"
