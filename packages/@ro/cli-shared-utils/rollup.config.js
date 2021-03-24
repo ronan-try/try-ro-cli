@@ -9,7 +9,8 @@ import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 // 清楚文件夹
-import { cleandir } from 'rollup-plugin-cleandir';
+// import { cleandir } from 'rollup-plugin-cleandir';
+import del from 'del';
 
 // // 生成 .d.ts 好像自动可以生成
 // import dts from 'rollup-plugin-dts';
@@ -87,7 +88,8 @@ function chunk(input, name) {
 }
 
 // 这是比较坑的地方，原来每个config 都clear一边
-cleandir('./lib');
+// cleandir('./lib');
+del.sync('./lib');
 
 export default [
   ...chunk('trimOnlyEnd', 'trimOnlyEnd'),

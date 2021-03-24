@@ -19,5 +19,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0"
+  },
+  "devDependencies": {
+    "del": "^6.0.0"
   }
 }
