@@ -1,7 +1,8 @@
 // path
 import path from 'path';
 
-// import { babel } from '@rollup/plugin-babel';
+import { babel } from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
@@ -50,12 +51,14 @@ function chunk (input, name) {
     ],
     plugins: [
       nodeResolve(
-        { extensions }
+        // { extensions }
       ),
-      // babel({
-      //   exclude: 'node_modules/**',
-      //   extensions,
-      // }),
+      // commonjs(),
+      babel({
+        // exclude: 'node_modules/**',
+        // extensions,
+        // babelHelpers: 'runtime',
+      }),
       typescript(),
       sourcemaps(),
     ],

@@ -5,9 +5,12 @@ importers:
       lodash: 4.17.21
     devDependencies:
       '@babel/core': 7.13.10
+      '@babel/plugin-transform-runtime': 7.13.10_@babel+core@7.13.10
       '@babel/preset-env': 7.13.12_@babel+core@7.13.10
       '@babel/preset-typescript': 7.13.0_@babel+core@7.13.10
+      '@babel/runtime': 7.13.10
       '@rollup/plugin-babel': 5.3.0_c93b9b7bf2c40a31d16ae14d510c3614
+      '@rollup/plugin-commonjs': 17.1.0_rollup@2.42.3
       '@rollup/plugin-json': 4.1.0_rollup@2.42.3
       '@rollup/plugin-node-resolve': 11.2.0_rollup@2.42.3
       '@rollup/plugin-replace': 2.4.1_rollup@2.42.3
@@ -23,9 +26,12 @@ importers:
       typescript: 4.2.3
     specifiers:
       '@babel/core': ^7.13.10
+      '@babel/plugin-transform-runtime': ^7.13.10
       '@babel/preset-env': ^7.13.12
       '@babel/preset-typescript': ^7.13.0
+      '@babel/runtime': ^7.13.10
       '@rollup/plugin-babel': ^5.3.0
+      '@rollup/plugin-commonjs': ^17.1.0
       '@rollup/plugin-json': ^4.1.0
       '@rollup/plugin-node-resolve': ^11.2.0
       '@rollup/plugin-replace': ^2.4.1
@@ -836,6 +842,20 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-xhUPzDXxZN1QfiOy/I5tyye+TRz6lA7z6xaT4CLOjPRMVg1ldRf0LHw0TDBpYL4vG78556WuHdyO9oi5UmzZBg==
+  /@babel/plugin-transform-runtime/7.13.10_@babel+core@7.13.10:
+    dependencies:
+      '@babel/core': 7.13.10
+      '@babel/helper-module-imports': 7.13.12
+      '@babel/helper-plugin-utils': 7.13.0
+      babel-plugin-polyfill-corejs2: 0.1.10_@babel+core@7.13.10
+      babel-plugin-polyfill-corejs3: 0.1.7_@babel+core@7.13.10
+      babel-plugin-polyfill-regenerator: 0.1.6_@babel+core@7.13.10
+      semver: 6.3.0
+    dev: true
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    resolution:
+      integrity: sha512-Y5k8ipgfvz5d/76tx7JYbKQTcgFSU6VgJ3kKQv4zGTKr+a9T/KBvfRvGtSFgKDQGt/DBykQixV0vNWKIdzWErA==
   /@babel/plugin-transform-shorthand-properties/7.12.13_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
@@ -1285,6 +1305,23 @@ packages:
         optional: true
     resolution:
       integrity: sha512-9uIC8HZOnVLrLHxayq/PTzw+uS25E14KPUBh5ktF+18Mjo5yK0ToMMx6epY0uEgkjwJw0aBW4x2horYXh8juWw==
+  /@rollup/plugin-commonjs/17.1.0_rollup@2.42.3:
+    dependencies:
+      '@rollup/pluginutils': 3.1.0_rollup@2.42.3
+      commondir: 1.0.1
+      estree-walker: 2.0.2
+      glob: 7.1.6
+      is-reference: 1.2.1
+      magic-string: 0.25.7
+      resolve: 1.20.0
+      rollup: 2.42.3
+    dev: true
+    engines:
+      node: '>= 8.0.0'
+    peerDependencies:
+      rollup: ^2.30.0
+    resolution:
+      integrity: sha512-PoMdXCw0ZyvjpCMT5aV4nkL0QywxP29sODQsSGeDpr/oI49Qq9tRtAsb/LbYbDzFlOydVEqHmmZWFtXJEAX9ew==
   /@rollup/plugin-json/4.1.0_rollup@2.42.3:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.42.3
@@ -1390,6 +1427,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
+  /@types/estree/0.0.46:
+    dev: true
+    resolution:
+      integrity: sha512-laIjwTQaD+5DukBZaygQ79K1Z0jb1bPEMRrkXSLjtCcZm+abyp5YbrqpSLzD42FwWW6gK/aS4NYpJ804nG2brg==
   /@types/graceful-fs/4.1.5:
     dependencies:
       '@types/node': 14.14.35
@@ -2903,6 +2944,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-DFLlS8yjkbssSUsh6GJtczbG45c=
+  /is-reference/1.2.1:
+    dependencies:
+      '@types/estree': 0.0.46
+    dev: true
+    resolution:
+      integrity: sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ==
   /is-stream/1.1.0:
     dev: true
     engines:
