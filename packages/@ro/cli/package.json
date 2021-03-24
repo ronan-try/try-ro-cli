@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "ro": "bin/ro.js"
+    "ro": "bin/ro.ts"
   },
-  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ronan",
   "license": "MIT",
   "dependencies": {
-    "commander": "^7.2.0"
+    "@ro/cli-shared-utils": "workspace:^1.0.0",
+    "commander": "^7.2.0",
+    "inquirer": "^8.0.0"
   }
 }
