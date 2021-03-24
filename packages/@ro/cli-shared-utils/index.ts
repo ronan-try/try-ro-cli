@@ -1,5 +1,5 @@
 
-export { trimOnlyEnd } from './lib/trimOnlyEnd';
+export { trimOnlyEnd } from './src/trimOnlyEnd';
 
 export {
   textRed,
@@ -9,4 +9,4 @@ export {
   textRedBright,
   textCyanBright,
   textGray,
-} from './lib/chalk';
+} from './src/chalkText';

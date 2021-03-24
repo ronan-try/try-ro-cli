@@ -11,5 +11,8 @@
     "test": "jest"
   },
   "author": "Ronan",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }

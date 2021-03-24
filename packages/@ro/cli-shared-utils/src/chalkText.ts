@@ -1,4 +1,3 @@
-// import chalk from 'chalk';
 import { red, cyan, yellow, green, redBright, cyanBright, gray } from 'chalk';
 
 export const textRed = (msg: string) => red(msg);
@@ -9,8 +8,8 @@ export const textYellow = (msg: string) => yellow(msg);
 
 export const textGreen = (msg: string) => green(msg);
 
+export const textGray = (msg: string) => gray(msg);
+
 export const textRedBright = (msg: string) => redBright(msg);
 
 export const textCyanBright = (msg: string) => cyanBright(msg);
-
-export const textGray = (msg: string) => gray(msg);
