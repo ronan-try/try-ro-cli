@@ -1,4 +1,6 @@
-## pnpm 常用手册
+## pnpm 常用手册 
+
+[pnpm官址](https://pnpm.js.org/installation)
 
 1. 全项目添加
 ```node
