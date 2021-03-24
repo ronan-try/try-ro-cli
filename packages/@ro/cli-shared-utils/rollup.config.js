@@ -11,8 +11,8 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 // 清楚文件夹
 import { cleandir } from 'rollup-plugin-cleandir';
 
-// 生成 .d.ts 好像自动可以生成
-import dts from 'rollup-plugin-dts';
+// // 生成 .d.ts 好像自动可以生成
+// import dts from 'rollup-plugin-dts';
 
 const extensions = ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', '.tsx'];
 /** 告诉rollup 不要打包，而是作为外部依赖 */
@@ -25,20 +25,20 @@ const globals = { 'chalk': 'chalk' };
 const pathSrc = (fileName) => path.resolve(`./src/${fileName}.ts`);
 const pathLib = (fileName) => path.resolve(`./lib/${fileName}.js`);
 const pathLibMini = (fileName) => path.resolve(`./lib/mini/${fileName}.js`);
-const pathTypes = (fileName) => path.resolve(`./lib/${fileName}.d.ts`);
+// const pathTypes = (fileName) => path.resolve(`./lib/${fileName}.d.ts`);
 
 function chunk(input, name) {
   const configs = [];
 
-  // .d.ts 配置文件
-  configs.push({
-    input: pathSrc(input),
-    output: {
-      file: pathTypes(name),
-      format: 'es',
-    },
-    plugins: [dts()],
-  });
+  // // .d.ts 配置文件
+  // configs.push({
+  //   input: pathSrc(input),
+  //   output: {
+  //     file: pathTypes(name),
+  //     format: 'es',
+  //   },
+  //   plugins: [dts()],
+  // });
 
   // umd 配置文件
   configs.push({
@@ -60,11 +60,10 @@ function chunk(input, name) {
         ],
         sourcemap: true,
         globals,
-      }
+      },
     ],
     external,
     plugins: [
-      cleandir('./lib'),
       typescript(),
       nodeResolve(
         {
@@ -80,13 +79,17 @@ function chunk(input, name) {
         babelHelpers: 'bundled',
       }),
       sourcemaps(),
+      // dts(),
     ],
   });
 
   return configs;
 }
 
+// 这是比较坑的地方，原来每个config 都clear一边
+cleandir('./lib');
+
 export default [
+  ...chunk('trimOnlyEnd', 'trimOnlyEnd'),
   ...chunk('chalkText', 'chalkText'),
-  // ...chunk('trimOnlyEnd', 'trimOnlyEnd'),
 ]
