@@ -47,8 +47,6 @@ importers:
       rollup-plugin-typescript2: ^0.30.0
       ts-node: ^9.1.1
       typescript: ^4.2.3
-  C:/Users/EvilQ/AppData/Roaming/npm/pnpm-global:
-    specifiers: {}
   packages/@ro/cli:
     dependencies:
       '@ro/cli-service': link:../cli-service
