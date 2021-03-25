@@ -11,6 +11,7 @@
   "author": "Ronan",
   "license": "MIT",
   "dependencies": {
+    "@ro/cli-service": "workspace:^1.0.0",
     "@ro/cli-shared-utils": "workspace:^1.0.0",
     "commander": "^7.2.0",
     "inquirer": "^8.0.0",
