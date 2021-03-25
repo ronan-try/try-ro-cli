@@ -7,7 +7,7 @@
 // 交互模块
 const inquirer = require('inquirer');
 // 内部依赖
-const { textRedBright } = require('@ro/cli-shared-utils/lib/chalkText');
+const { textRedBright } = require('@ro/cli-shared-utils/lib/umd/chalkText');
 
 // // require('../cli-editors/index').openWithBroswer(url);
 
