@@ -10,3 +10,5 @@ export {
   textCyanBright,
   textGray,
 } from './src/chalkText';
+
+export { logStep } from './src/logStep';
