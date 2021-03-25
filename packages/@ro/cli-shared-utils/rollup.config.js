@@ -1,4 +1,4 @@
-// path
+import fs from 'fs';
 import path from 'path';
 
 import { babel } from '@rollup/plugin-babel';
@@ -9,7 +9,6 @@ import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import del from 'del';
-
 // 生成 .d.ts 好像自动可以生成
 // 将tsconfig.json中的"declaration": true, 干掉
 import dts from 'rollup-plugin-dts';
@@ -92,13 +91,23 @@ function chunk (input, name) {
   return configs;
 }
 
+const configFiles = [];
+((configFiles = []) => {
+  const srcFiles = fs.readdirSync(pathResolve('./src/'));
+
+  srcFiles.forEach(fileName => {
+    const name = fileName.replace('.ts', '');
+    [].push.apply(configFiles, chunk(name, name));
+  });
+})(configFiles);
+
+
 // 这是比较坑的地方，原来每个config 都clear一边
 // cleandir('./lib');
 del.sync('./lib');
 
 export default [
-  ...chunk('trimOnlyEnd', 'trimOnlyEnd'),
-  ...chunk('chalkText', 'chalkText'),
+  ...configFiles,
   {
     input: path.resolve(`./index.ts`),
     output: {
@@ -155,4 +164,4 @@ export default [
     ],
 
   }
-]
+];
