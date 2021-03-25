@@ -8,7 +8,7 @@
 const inquirer = require('inquirer');
 // 内部依赖
 const { textRedBright } = require('@ro/cli-shared-utils/lib/umd/chalkText');
-
+const {} = require('@ro/cli-shared-utils/lib/umd/')
 // // require('../cli-editors/index').openWithBroswer(url);
 
 module.exports = () => {
