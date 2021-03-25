@@ -13,6 +13,7 @@
   "dependencies": {
     "@ro/cli-shared-utils": "workspace:^1.0.0",
     "commander": "^7.2.0",
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "shelljs": "^0.8.4"
   }
 }
