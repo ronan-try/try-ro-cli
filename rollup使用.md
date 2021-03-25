@@ -1,6 +1,9 @@
 
 ## 官地址 https://rollupjs.org/guide/en/#creating-your-first-bundle
 
+- [configuration-files](https://rollupjs.org/guide/en/#configuration-files)
+- [big-list-of-options](https://rollupjs.org/guide/en/#big-list-of-options)
+
 ### 优先参考剥壳 rollup + typescript
 > https://blog.csdn.net/qq_32930863/article/details/108608709
 

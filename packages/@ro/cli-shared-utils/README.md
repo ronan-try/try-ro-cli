@@ -1,5 +1,12 @@
+# @ro/cli-shared-utils
 参考 lodash，将函数体平铺
 
+## 打包后的文件在哪儿找
+- umd (commjs, amd)，可以在`lib`文件夹中找到对应的
+- es module 在哪儿？
+- ts，可以在`src`文件夹中
+
+## 目录结构
 
 ## 遇到难题
 1. ts + rollup + commonjs(chalk.js) 
@@ -10,3 +17,4 @@
   src\chalk.ts (1:7)
   1: import chalk from 'chalk';
 ```
+直接显式搞一下
