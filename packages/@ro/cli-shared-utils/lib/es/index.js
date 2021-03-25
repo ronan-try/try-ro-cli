@@ -30,4 +30,8 @@ const textGray = msg => gray(msg);
 const textRedBright = msg => redBright(msg);
 const textCyanBright = msg => cyanBright(msg);
 
-export { textCyan, textCyanBright, textGray, textGreen, textRed, textRedBright, textYellow, trimOnlyEnd };
+const logStep = msg => {
+  console.log('\n', textGray(msg), '\n');
+};
+
+export { logStep, textCyan, textCyanBright, textGray, textGreen, textRed, textRedBright, textYellow, trimOnlyEnd };

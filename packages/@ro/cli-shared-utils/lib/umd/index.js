@@ -34,6 +34,11 @@
   const textRedBright = msg => chalk.redBright(msg);
   const textCyanBright = msg => chalk.cyanBright(msg);
 
+  const logStep = msg => {
+    console.log('\n', textGray(msg), '\n');
+  };
+
+  exports.logStep = logStep;
   exports.textCyan = textCyan;
   exports.textCyanBright = textCyanBright;
   exports.textGray = textGray;
