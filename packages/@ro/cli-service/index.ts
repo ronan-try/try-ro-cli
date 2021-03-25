@@ -1,1 +1,6 @@
-console.log(110);
+export {
+  existGitRepo,
+  gitBranchCurrent,
+  gitLocalOriginURI,
+  gitRemoveV,
+} from './src/git';

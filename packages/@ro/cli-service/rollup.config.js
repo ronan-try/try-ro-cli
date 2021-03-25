@@ -16,12 +16,12 @@ import dts from 'rollup-plugin-dts';
 const extensions = ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', '.tsx'];
 
 /** 告诉rollup 不要打包，而是作为外部依赖 */
-const external = ['chalk'];
+const external = ['shelljs'];
 
 /** 告诉 rollup 全剧变量
  * 例如{jquery:$},就是高速rollup全剧变量$是jquery
  */
-const globals = { 'chalk': 'chalk' };
+const globals = { 'shelljs': 'shelljs' };
 
 const pathResolve = (...args) => path.resolve(...args);
 
