@@ -8,6 +8,9 @@
 
 ## 目录结构
 
+## 遗留问题
+1. rollup 打包后，第三方包chalk被exclude，那么在其他人install这个包时，chalk怎么样呢
+
 ## 遇到难题
 1. ts + rollup + commonjs(chalk.js) 
 ```js
