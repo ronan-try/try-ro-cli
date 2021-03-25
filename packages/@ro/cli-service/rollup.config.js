@@ -69,7 +69,7 @@ function chunk (input, name) {
         globals, // Comma-separate list of `moduleID:Global` pairs
       },
       {
-        file: pathResolve('./lib/umd/mini', `${name}.mini.js`),
+        file: pathResolve('./lib/umd/mini/', `${name}.mini.js`),
         format: 'umd',
         name,
         compact: true,
