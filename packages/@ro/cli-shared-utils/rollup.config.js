@@ -8,69 +8,49 @@ import typescript from 'rollup-plugin-typescript2';
 // 压缩
 import { terser } from 'rollup-plugin-terser';
 import sourcemaps from 'rollup-plugin-sourcemaps';
-// 清楚文件夹
-// import { cleandir } from 'rollup-plugin-cleandir';
 import del from 'del';
 
-// // 生成 .d.ts 好像自动可以生成
-// import dts from 'rollup-plugin-dts';
+// 生成 .d.ts 好像自动可以生成
+// 将tsconfig.json中的"declaration": true, 干掉
+import dts from 'rollup-plugin-dts';
 
 const extensions = ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', '.tsx'];
+
 /** 告诉rollup 不要打包，而是作为外部依赖 */
 const external = ['chalk'];
+
 /** 告诉 rollup 全剧变量
  * 例如{jquery:$},就是高速rollup全剧变量$是jquery
  */
 const globals = { 'chalk': 'chalk' };
 
-const pathSrc = (fileName) => path.resolve(`./src/${fileName}.ts`);
-const pathLib = (fileName) => path.resolve(`./lib/${fileName}.js`);
-const pathLibMini = (fileName) => path.resolve(`./lib/mini/${fileName}.js`);
-// const pathTypes = (fileName) => path.resolve(`./lib/${fileName}.d.ts`);
+const pathResolve = (...args) => path.resolve(...args);
 
-function chunk(input, name) {
+function chunk (input, name) {
+  // https://rollupjs.org/guide/en/#big-list-of-options
   const configs = [];
 
-  // // .d.ts 配置文件
-  // configs.push({
-  //   input: pathSrc(input),
-  //   output: {
-  //     file: pathTypes(name),
-  //     format: 'es',
-  //   },
-  //   plugins: [dts()],
-  // });
-
-  // umd 配置文件
+  // .d.ts 配置文件
   configs.push({
-    input: pathSrc(input),
-    output: [
-      {
-        file: pathLib(name),
-        format: 'umd',
-        name,
-        globals,
-      },
-      {
-        file: pathLibMini(name),
-        format: 'umd',
-        name,
-        compact: true,
-        plugins: [
-          terser(),
-        ],
-        sourcemap: true,
-        globals,
-      },
-    ],
+    input: pathResolve('./src/', `${input}.ts`),
+    output: {
+      file: pathResolve('./lib/umd/', `${name}.d.ts`),
+      format: 'es',
+    },
+    plugins: [dts()],
+  });
+
+  // 编译打包配置
+  configs.push({
     external,
+    input: pathResolve('./src/', `${input}.ts`),
     plugins: [
       typescript(),
       nodeResolve(
         {
           extensions,
           modulesOnly: true,
-          preferredBuiltins: false
+          preferBuiltins: false
         }
       ),
       commonjs(),
@@ -81,6 +61,31 @@ function chunk(input, name) {
       }),
       sourcemaps(),
       // dts(),
+    ],
+    output: [
+      {
+        file: pathResolve('./lib/umd/', `${name}.js`),
+        format: 'umd', // Type of output (amd, cjs, es, iife, umd, system)
+        name,
+        globals, // Comma-separate list of `moduleID:Global` pairs
+      },
+      {
+        file: pathResolve('./lib/umd/mini', `${name}.mini.js`),
+        format: 'umd',
+        name,
+        compact: true,
+        plugins: [
+          terser(),
+        ],
+        sourcemap: true,
+        globals,
+      },
+      {
+        file: pathResolve('./lib/es/', `${name}.js`),
+        format: 'es', // Type of output (amd, cjs, es, iife, umd, system)
+        name,
+        globals, // Comma-separate list of `moduleID:Global` pairs
+      },
     ],
   });
 
@@ -96,33 +101,22 @@ export default [
   ...chunk('chalkText', 'chalkText'),
   {
     input: path.resolve(`./index.ts`),
-    output: [
-      {
-        file: path.resolve(`./lib/index.js`),
-        format: 'umd',
-        name: 'index',
-        globals,
-      },
-      {
-        file: path.resolve(`./lib/mini/index.js`),
-        format: 'umd',
-        name: 'index',
-        compact: true,
-        plugins: [
-          terser(),
-        ],
-        sourcemap: true,
-        globals,
-      },
-    ],
+    output: {
+      file: path.resolve(`./lib/umd/index.d.ts`),
+      format: 'es',
+    },
+    plugins: [dts()],
+  },
+  {
     external,
+    input: path.resolve(`./index.ts`),
     plugins: [
       typescript(),
       nodeResolve(
         {
           extensions,
           modulesOnly: true,
-          preferredBuiltins: false
+          preferBuiltins: false
         }
       ),
       commonjs(),
@@ -134,5 +128,31 @@ export default [
       sourcemaps(),
       // dts(),
     ],
+    output: [
+      {
+        file: path.resolve(`./lib/umd/index.js`),
+        format: 'umd',
+        name: 'index',
+        globals,
+      },
+      {
+        file: path.resolve(`./lib/umd/mini/index.mini.js`),
+        format: 'umd',
+        name: 'index',
+        compact: true,
+        plugins: [
+          terser(),
+        ],
+        sourcemap: true,
+        globals,
+      },
+      {
+        file: pathResolve('./lib/es/', `index.js`),
+        format: 'es', // Type of output (amd, cjs, es, iife, umd, system)
+        name: 'index',
+        globals, // Comma-separate list of `moduleID:Global` pairs
+      },
+    ],
+
   }
 ]
