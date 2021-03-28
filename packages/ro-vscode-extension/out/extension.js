@@ -16,7 +16,12 @@ function activate(context) {
     let disposable = vscode.commands.registerCommand('ro-vscode-extension.helloWorld', () => {
         // The code you place here will be executed every time your command is executed
         // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World from @ro/vscode-extension!');
+        vscode.window.showInformationMessage('Hello -' + 100);
+        const folders = vscode.workspace.workspaceFolders;
+        vscode.window.showInformationMessage('Hello --' + (folders === null || folders === void 0 ? void 0 : folders.length));
+        if (Array.isArray(folders) && folders.length > 0) {
+            vscode.window.showInformationMessage('Hello ' + folders[0].uri.fsPath);
+        }
     });
     context.subscriptions.push(disposable);
 }

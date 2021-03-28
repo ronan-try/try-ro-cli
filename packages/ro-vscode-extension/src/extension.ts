@@ -2,6 +2,9 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+// demo
+import { existGitRepo, gitBranchCurrent, gitLocalOriginURI } from '@ro/cli-service';
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -17,7 +20,15 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from @ro/vscode-extension!');
+		vscode.window.showInformationMessage('Hello -' + 100);
+
+    const folders = vscode.workspace.workspaceFolders;
+    vscode.window.showInformationMessage('Hello --' + folders?.length);
+
+    if (Array.isArray(folders) && folders.length > 0) {
+  		vscode.window.showInformationMessage('Hello ' + folders[0].uri.fsPath);
+    }
+	
 	});
 
 	context.subscriptions.push(disposable);
