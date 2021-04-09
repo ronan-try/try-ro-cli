@@ -17,7 +17,7 @@
     "commands": [
       {
         "command": "ro-vscode-extension.helloWorld",
-        "title": "Hello 这是Ro"
+        "title": "Hello: Here is @ro/cli"
       }
     ]
   },

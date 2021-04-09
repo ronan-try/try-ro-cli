@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello -' + 100);
+		vscode.window.showInformationMessage('Hello: Here is @ro/cli !');
 
     const folders = vscode.workspace.workspaceFolders;
     vscode.window.showInformationMessage('Hello --' + folders?.length);
