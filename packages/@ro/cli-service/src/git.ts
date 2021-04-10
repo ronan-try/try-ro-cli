@@ -8,7 +8,7 @@ export const existGitRepo = (workPath: string): Promise<boolean> =>
     shelljs.exec(
       'git status',
       { cwd: workPath, silent: true },
-      (code) => resolve(code === 0)
+      (code: number) => resolve(code === 0)
     );
   });
 
@@ -16,7 +16,7 @@ const factoryGitShell = (workPath: string, cmd: string): Promise<ShellExecResult
   shelljs.exec(
     cmd,
     { cwd: workPath, silent: true },
-    (code, stdout, stderr) => resolve({ code, stdout, stderr })
+    (code: number, stdout: string, stderr: string) => resolve({ code, stdout, stderr })
   )
 });
 
