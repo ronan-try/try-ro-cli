@@ -3,6 +3,7 @@
   "displayName": "@ro/vscode-extension",
   "description": "",
   "version": "0.0.1",
+  "private": true,
   "engines": {
     "vscode": "^1.46.0"
   },
@@ -10,24 +11,38 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:ro-vscode-extension.helloWorld"
+    "onCommand:ro-vscode-extension.helloWorld",
+    "onCommand:ro-vscode-extension.exampleOpenWebview",
+    "onCommand:ro-vscode-extension.react-webview.start"
   ],
-  "main": "./out/extension.js",
+  "main": "./build/ext-src/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "ro-vscode-extension.helloWorld",
-        "title": "Hello: Here is @ro/cli"
+        "title": "@ro/cli: Hello world"
+      },
+      {
+        "command": "ro-vscode-extension.exampleOpenWebview",
+        "title": "@ro/cli: Example Open webview"
+      },
+      {
+        "command": "ro-vscode-extension.react-webview.start",
+        "title": "@ro/cli: start react webview",
+        "category": "React"
       }
     ]
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "./scripts/build-non-split.js && tsc -p ./tsconfig.extension.json",
+    "compile": "tsc -p ./tsconfig.extension.json",
+    "watch": "tsc -watch -p ./tsconfig.extension.json",
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./build/test/runTest.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "react:build": "./scripts/build-non-split.js"
   },
   "devDependencies": {
     "@types/glob": "^7.1.3",
@@ -39,10 +54,36 @@
     "eslint": "^7.19.0",
     "glob": "^7.1.6",
     "mocha": "^8.2.1",
+    "rewire": "^5.0.0",
     "typescript": "^4.1.3",
     "vscode-test": "^1.5.0"
   },
   "dependencies": {
-    "@ro/cli-service": "workspace:^1.0.0"
+    "@ro/cli-service": "workspace:^1.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
