@@ -13,7 +13,7 @@
   "activationEvents": [
     "onCommand:ro-vscode-extension.helloWorld",
     "onCommand:ro-vscode-extension.exampleOpenWebview",
-    "onCommand:ro-vscode-extension.react-webview.start"
+    "onCommand:ro-vscode-extension.startReactWebview"
   ],
   "main": "./build/ext-src/extension.js",
   "contributes": {
@@ -27,14 +27,14 @@
         "title": "@ro/cli: Example Open webview"
       },
       {
-        "command": "ro-vscode-extension.react-webview.start",
+        "command": "ro-vscode-extension.startReactWebview",
         "title": "@ro/cli: start react webview",
         "category": "React"
       }
     ]
   },
   "scripts": {
-    "vscode:prepublish": "./scripts/build-non-split.js && tsc -p ./tsconfig.extension.json",
+    "vscode:prepublish": "pnpx ./scripts/build-non-split.js && pnpm run compile",
     "compile": "tsc -p ./tsconfig.extension.json",
     "watch": "tsc -watch -p ./tsconfig.extension.json",
     "pretest": "pnpm run compile && pnpm run lint",
@@ -42,7 +42,7 @@
     "test": "node ./build/test/runTest.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "react:build": "./scripts/build-non-split.js"
+    "react:build": "pnpx ./scripts/build-non-split.js"
   },
   "devDependencies": {
     "@types/glob": "^7.1.3",
