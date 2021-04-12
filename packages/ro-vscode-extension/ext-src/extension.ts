@@ -44,6 +44,7 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate() { }
 
 function getWebviewContent() {
+	return ddd();
 	return `
 		<!DOCTYPE html>
 		<html lang="en">
@@ -67,4 +68,34 @@ function getWebviewContent() {
 			</body>
 		</html>
 	`;
+}
+
+function ddd () {
+	return `
+	<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+		<base href="http://localhost:3000" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  	<script src="/static/js/bundle.js"></script><script src="/static/js/vendors~main.chunk.js"></script><script src="/static/js/main.chunk.js"></script></body>
+</html>
+`;
 }
