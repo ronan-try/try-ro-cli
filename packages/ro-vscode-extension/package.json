@@ -31,7 +31,16 @@
         "title": "@ro/cli: start react webview",
         "category": "React"
       }
-    ]
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "isWindows || isMac",
+          "command": "ro-vscode-extension.exampleOpenWebview",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpx ./scripts/build-non-split.js && pnpm run compile",

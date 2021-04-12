@@ -51,10 +51,19 @@ function getWebviewContent() {
 				<meta charset="UTF-8">
 				<meta name="viewport" content="with=device-width, initial-scale=1.0">
 				<title>Example Webview</title>
+				<script src="https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
 			</head>
 			<body>
 				<h1> This works! </h1>
 				add some custom HTML here.
+
+				<script>
+					(() => {
+						console.log(Date.now());
+						console.warn(jQuery);
+						console.log(jQuery('h1'));
+					})();
+				</script>
 			</body>
 		</html>
 	`;
