@@ -1,7 +1,7 @@
 import * as ChildProcess from 'child_process';
-import path from 'path';
+import * as path from 'path';
 import appPath from 'app-path';
-import shelljs from 'shelljs';
+import * as shelljs from 'shelljs';
 
 export function openWithVSCode(fullPath: string) {
   (async () => {

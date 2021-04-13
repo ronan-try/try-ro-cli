@@ -1,4 +1,4 @@
-import shelljs from 'shelljs';
+import * as shelljs from 'shelljs';
 
 type ShellExecResult = { code: number, stdout: string, stderr: string }
 
