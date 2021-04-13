@@ -13,7 +13,8 @@
   "activationEvents": [
     "onCommand:ro-vscode-extension.helloWorld",
     "onCommand:ro-vscode-extension.exampleOpenWebview",
-    "onCommand:ro-vscode-extension.startReactWebview"
+    "onCommand:ro-vscode-extension.startReactWebview",
+    "onCommand:ro-vscode-extension.roMr"
   ],
   "main": "./build/ext-src/extension.js",
   "contributes": {
@@ -30,6 +31,12 @@
         "command": "ro-vscode-extension.startReactWebview",
         "title": "@ro/cli: start react webview",
         "category": "React"
+      },
+      {
+        "command": "ro-vscode-extension.roMr",
+        "title": "make a request",
+        "icon": "images/icon.png",
+        "category": "Ro"
       }
     ],
     "menus": {
@@ -37,6 +44,11 @@
         {
           "when": "isWindows || isMac",
           "command": "ro-vscode-extension.exampleOpenWebview",
+          "group": "navigation"
+        },
+        {
+          "when": "isWindows || isMac",
+          "command": "ro-vscode-extension.roMr",
           "group": "navigation"
         }
       ]
@@ -68,6 +80,7 @@
     "vscode-test": "^1.5.0"
   },
   "dependencies": {
+    "@ro/cli-os-utils": "workspace:^1.0.0",
     "@ro/cli-service": "workspace:^1.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

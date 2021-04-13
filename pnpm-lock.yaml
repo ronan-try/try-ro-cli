@@ -95,6 +95,7 @@ importers:
       del: ^6.0.0
   packages/ro-vscode-extension:
     dependencies:
+      '@ro/cli-os-utils': link:../@ro/cli-os-utils
       '@ro/cli-service': link:../@ro/cli-service
       '@testing-library/jest-dom': 5.11.10
       '@testing-library/react': 11.2.6_react-dom@17.0.2+react@17.0.2
@@ -117,6 +118,7 @@ importers:
       typescript: 4.2.3
       vscode-test: 1.5.2
     specifiers:
+      '@ro/cli-os-utils': workspace:^1.0.0
       '@ro/cli-service': workspace:^1.0.0
       '@testing-library/jest-dom': ^5.11.4
       '@testing-library/react': ^11.1.0
