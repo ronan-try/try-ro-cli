@@ -1,6 +1,9 @@
 import * as vscode from 'vscode';
 import ReactPanel from './ReactPanel';
 
+import { gitBranchCurrent, gitLocalOriginURI } from '@ro/cli-service';
+import { openWithBroswer } from '@ro/cli-os-utils';
+
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "ro-vscode-extension" is now active!');
 
@@ -38,6 +41,36 @@ export function activate(context: vscode.ExtensionContext) {
 		ReactPanel.createOrShow(context.extensionUri, context.extensionPath);
 	});
 	context.subscriptions.push(reactview);
+
+	let roMr = vscode.commands.registerCommand('ro-vscode-extension.roMr', async () => {
+		const folders = vscode.workspace.workspaceFolders;
+		
+		if (!Array.isArray(folders)) {
+			vscode.window.showErrorMessage('ro mr 没有监听到有效的路径-0');
+			return;
+		}
+		if (folders.length < 1) {
+			vscode.window.showErrorMessage('ro mr 没有监听到有效的路径-1');
+			return;
+		}
+		const curWorkingPath = folders[0].uri.fsPath;
+		vscode.window.showInformationMessage('ro mr: ', curWorkingPath);
+
+		// const curBranchName = await gitBranchCurrent(curWorkingPath);
+
+	// 	const originUrl = await gitLocalOriginURI(curWorkingPath);
+	// 	const url =
+	// 		`${originUrl}`
+	// 			.replace('.com:', '.com/')
+	// 			.replace('git@', 'https://')
+	// 			.replace('.git', '/merge_requests/new?')
+	// 		+ 'merge_request%5Bsource_branch%5D='
+	// 		+ curBranchName;
+		const url = 'https://www.baidu.com';
+		vscode.window.showInformationMessage('ro mr: ', url);
+		vscode.env.openExternal(vscode.Uri.parse(url));
+	});
+	context.subscriptions.push(roMr);
 }
 
 // this method is called when your extension is deactivated
@@ -70,7 +103,7 @@ function getWebviewContent() {
 	`;
 }
 
-function ddd () {
+function ddd() {
 	return `
 	<!DOCTYPE html>
 <html lang="en">
