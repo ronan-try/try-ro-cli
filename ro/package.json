@@ -1,5 +1,5 @@
 {
-  "name": "ro",
+	"name": "ro",
 	"displayName": "ro-vscode-extension",
 	"description": "@ro/cli vscode extension",
 	"version": "0.0.1",
@@ -10,14 +10,21 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:ro.helloWorld"
+		"onCommand:ro.helloWorld2",
+		"onCommand:ro.exampleWebView"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "ro.helloWorld",
-				"title": "Hello World"
+				"command": "ro.helloWorld2",
+				"title": "Hello World",
+        "category": "RoCli"
+			},
+			{
+				"command": "ro.exampleWebView",
+				"title": "open exampleWebView",
+        "category": "RoCli"
 			}
 		]
 	},
