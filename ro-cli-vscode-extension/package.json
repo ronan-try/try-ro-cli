@@ -27,18 +27,15 @@
 				"category": "@ro/cli"
 			}
 		],
-		"editor/title": [
-			{
-				"when": "isWindows || isMac",
-				"command": "ro-cli-vscode-extension.helloWorld",
-				"group": "navigation"
-			},
-			{
-				"when": "isWindows || isMac",
-				"command": "ro-cli-vscode-extension.mr",
-				"group": "navigation"
-			}
-		]
+		"menus": {
+			"editor/title": [
+				{
+					"when": "isWindows || isMac",
+					"command": "ro-cli-vscode-extension.mr",
+					"group": "navigation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
