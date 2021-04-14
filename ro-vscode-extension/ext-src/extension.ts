@@ -1,8 +1,6 @@
 import * as vscode from 'vscode';
 import ReactPanel from './ReactPanel';
-
-import { gitBranchCurrent, gitLocalOriginURI } from '@ro/cli-service';
-import { openWithBroswer } from '@ro/cli-os-utils';
+import { GitExtension } from '../build-in/vscode.git/git';
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "ro-vscode-extension" is now active!');
@@ -55,6 +53,16 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 		const curWorkingPath = folders[0].uri.fsPath;
 		vscode.window.showInformationMessage('ro mr: ', curWorkingPath);
+		const gitExtension = vscode.extensions.getExtension<GitExtension>('vscode.git').exports;
+		const git = gitExtension.getAPI(1);
+
+		try {
+			const remotes = git.getRepository(folders[0].uri).state.remotes;
+			vscode.window.showInformationMessage('ro mr: ' + remotes.length);
+		} catch (error) {
+			console.warn(error);
+		}
+
 
 		// const curBranchName = await gitBranchCurrent(curWorkingPath);
 
