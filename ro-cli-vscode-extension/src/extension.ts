@@ -1,21 +1,8 @@
 import * as vscode from 'vscode';
+import registerCommands from './registerCommands';
 
 export function activate(context: vscode.ExtensionContext) {
-	{
-		let disposable = vscode.commands.registerCommand('ro-cli-vscode-extension.helloWorld', () => {
-			vscode.window.showInformationMessage('Hello World from @ro/cli-vscode-extension!');
-		});
-	
-		context.subscriptions.push(disposable);
-	}
-
-	{
-		let disposable = vscode.commands.registerCommand('ro-cli-vscode-extension.mr', () => {
-			vscode.window.showInformationMessage('mr from @ro/cli-vscode-extension!');
-		});
-	
-		context.subscriptions.push(disposable);
-	}
+	registerCommands(context);
 }
 
 // this method is called when your extension is deactivated
