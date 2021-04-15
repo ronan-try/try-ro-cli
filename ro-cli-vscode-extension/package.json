@@ -14,7 +14,7 @@
 		"onCommand:ro-cli-vscode-extension.helloWorld",
 		"onCommand:ro-cli-vscode-extension.mr"
 	],
-	"main": "./out/extension.js",
+	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
@@ -36,18 +36,14 @@
 					"group": "navigation",
 					"when": "config.git.enabled && !git.missing && gitOpenRepositoryCount != 0"
 				}
-			],
-			"scm/title": [
-				{
-					"when": "isWindows || isMac",
-					"command": "ro-cli-vscode-extension.mr",
-					"group": "navigation"
-				}
 			]
 		}
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
+		"vscode:prepublish": "webpack --mode production",
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development --watch",
+		"test-compile": "tsc -p ./",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
@@ -65,18 +61,21 @@
 		"eslint": "^7.19.0",
 		"glob": "^7.1.6",
 		"mocha": "^8.2.1",
+		"ts-loader": "^8.1.0",
 		"typescript": "^4.1.3",
-		"vscode-test": "^1.5.0"
+		"vscode-test": "^1.5.0",
+		"webpack": "^5.33.2",
+		"webpack-cli": "^4.6.0"
 	},
 	"dependencies": {
 		"shelljs": "^0.8.4"
 	},
 	"repository": {
-    "type": "git",
-    "url": "git+https://github.com/ronan-try/try-ro-cli.git"
-  },
+		"type": "git",
+		"url": "git+https://github.com/ronan-try/try-ro-cli.git"
+	},
 	"bugs": {
-    "url": "https://github.com/ronan-try/try-ro-cli/issues"
-  },
-  "homepage": "https://github.com/ronan-try/try-ro-cli/tree/main/ro-cli-vscode-extension#readme"
+		"url": "https://github.com/ronan-try/try-ro-cli/issues"
+	},
+	"homepage": "https://github.com/ronan-try/try-ro-cli/tree/main/ro-cli-vscode-extension#readme"
 }
