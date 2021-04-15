@@ -24,7 +24,7 @@
 			},
 			{
 				"command": "ro-cli-vscode-extension.mr",
-				"title": "Make a MR",
+				"title": "Make a MR22222",
 				"icon": "resources/icons/dark/ro.svg",
 				"category": "@ro/cli"
 			}
