@@ -9,3 +9,14 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
+
+node_modules
+package-json.lock
+yarn.lock
+tsconfig.json
+.gitignore
+.git
+.env
+.env.prod
+.env.staging
+.env.test
