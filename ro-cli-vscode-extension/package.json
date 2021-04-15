@@ -24,11 +24,19 @@
 			{
 				"command": "ro-cli-vscode-extension.mr",
 				"title": "Make a MR",
+				"icon": "resources/icons/dark/ro.svg",
 				"category": "@ro/cli"
 			}
 		],
 		"menus": {
 			"editor/title": [
+				{
+					"command": "ro-cli-vscode-extension.mr",
+					"group": "navigation",
+					"when": "config.git.enabled && !git.missing && gitOpenRepositoryCount != 0"
+				}
+			],
+			"scm/title": [
 				{
 					"when": "isWindows || isMac",
 					"command": "ro-cli-vscode-extension.mr",

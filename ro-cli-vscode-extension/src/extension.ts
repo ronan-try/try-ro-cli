@@ -1,9 +1,10 @@
 import * as vscode from 'vscode';
-import registerCommands from './registerCommands';
+import commandRegister from './commandRegister';
 
 export function activate(context: vscode.ExtensionContext) {
-	registerCommands(context);
+	commandRegister(context);
+	// to do
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
