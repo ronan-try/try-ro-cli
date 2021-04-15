@@ -8,11 +8,10 @@ Describe specific features of your extension including screenshots of your exten
 
 For example if there is an image subfolder under your extension project workspace:
 
-\!\[快速发起MR\]\(resources/docs/mr-icon.png\)
 
-![icon](/resources/docs/mr-icon.png)
+![icon](https://github.com/ronan-try/try-ro-cli/blob/main/ro-cli-vscode-extension/resources/docs/mr-icon.png?raw=true)
 
-![快速发起MR](/resources/docs/mr-cmd.png)
+![快速发起MR](https://github.com/ronan-try/try-ro-cli/blob/main/ro-cli-vscode-extension/resources/docs/mr-cmd.png?raw=true)
 
 ## Requirements
 
