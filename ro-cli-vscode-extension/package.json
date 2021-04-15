@@ -3,6 +3,7 @@
 	"displayName": "@ro/cli-vscode-extension",
 	"description": "@ro/cli vscode extension",
 	"version": "0.0.1",
+	"publisher": "ronan-try",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
