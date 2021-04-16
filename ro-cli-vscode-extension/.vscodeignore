@@ -20,3 +20,6 @@ tsconfig.json
 .env.prod
 .env.staging
 .env.test
+
+.vscode
+webpack.config.js
