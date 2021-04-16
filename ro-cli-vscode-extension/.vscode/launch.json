@@ -9,13 +9,15 @@
 			"name": "Run Extension",
 			"type": "extensionHost",
 			"request": "launch",
+			// "runtimeExecutable": "${execPath}", // from https://github.com/microsoft/vscode-extension-samples/blob/main/webpack-sample/.vscode/launch.json
 			"args": [
 				"--extensionDevelopmentPath=${workspaceFolder}"
 			],
 			"outFiles": [
 				"${workspaceFolder}/dist/**/*.js"
 			],
-			"preLaunchTask": "${defaultBuildTask}"
+			// "preLaunchTask": "${defaultBuildTask}",
+			"preLaunchTask": "npm: webpack" // // from https://github.com/microsoft/vscode-extension-samples/blob/main/webpack-sample/.vscode/launch.json
 		},
 		{
 			"name": "Extension Tests",

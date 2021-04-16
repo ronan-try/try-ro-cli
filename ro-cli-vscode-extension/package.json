@@ -1,7 +1,7 @@
 {
 	"name": "ro-cli-vscode-extension",
-	"displayName": "@ro/cli-vscode-extension",
-	"description": "@ro/cli vscode extension",
+	"displayName": "@ro/cli",
+	"description": "@ro/cli for vscode extension",
 	"version": "0.0.1",
 	"publisher": "ronantry",
 	"engines": {
@@ -24,8 +24,8 @@
 			},
 			{
 				"command": "ro-cli-vscode-extension.mr",
-				"title": "Make a MR22222",
-				"icon": "resources/icons/dark/ro.svg",
+				"title": "Make a MR",
+				"icon": "resources/icons/dark/ro.mr.png",
 				"category": "@ro/cli"
 			}
 		],
@@ -77,5 +77,6 @@
 	"bugs": {
 		"url": "https://github.com/ronan-try/try-ro-cli/issues"
 	},
-	"homepage": "https://github.com/ronan-try/try-ro-cli/tree/main/ro-cli-vscode-extension#readme"
+	"homepage": "https://github.com/ronan-try/try-ro-cli/tree/main/ro-cli-vscode-extension#readme",
+	"license": "MIT"
 }
