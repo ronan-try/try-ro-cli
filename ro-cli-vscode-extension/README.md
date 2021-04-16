@@ -15,7 +15,7 @@ For example if there is an image subfolder under your extension project workspac
 
 ## Requirements
 
-不需要额外依赖
+1. 依赖了`shelljs`, 未来将升级为`@ro/cli-service`
 
 ## Extension Settings
 暂时不支持配置
@@ -37,7 +37,11 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.2
+Refactor: 采用了webpack bundle
+
+### 0.0.1
+初版的MR
 
 ### 1.0.0
 
