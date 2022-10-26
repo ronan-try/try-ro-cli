@@ -1,0 +1,41 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "D:\\GitHub\\ronan-try\\try-ro-cli\\packages"
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "@ro/cli",
+      "version": "1.0.0",
+      "description": "",
+      "bin": {
+        "ro": "bin/ro.js"
+      },
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": "Ronan",
+      "license": "MIT",
+      "dependencies": {
+        "@ro/cli-service": "workspace:^1.0.0",
+        "@ro/cli-shared-utils": "workspace:^1.0.0",
+        "commander": "^7.2.0",
+        "inquirer": "^8.0.0",
+        "shelljs": "^0.8.4"
+      }
+    },
+    "prefix": "D:\\GitHub\\ronan-try\\try-ro-cli\\packages\\@ro\\cli"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "D:\\.pnpm-store\\v3",
+    "virtualStoreDir": "D:\\GitHub\\ronan-try\\try-ro-cli\\packages\\node_modules\\.pnpm"
+  },
+  "3 error pnpm": {
+    "err": {
+      "name": "TypeError",
+      "message": "object null is not iterable (cannot read property Symbol(Symbol.iterator))",
+      "stack": "TypeError: object null is not iterable (cannot read property Symbol(Symbol.iterator))\n    at D:\\SDE\\nvm\\v14.15.4\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:49501:30\n    at new Promise (<anonymous>)\n    at pMap (D:\\SDE\\nvm\\v14.15.4\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:49489:45)\n    at pFilter (D:\\SDE\\nvm\\v14.15.4\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:49546:26)\n    at _install (D:\\SDE\\nvm\\v14.15.4\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:111646:67)\n    at async mutateModules (D:\\SDE\\nvm\\v14.15.4\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:111521:20)\n    at async Timeout._onTimeout (D:\\SDE\\nvm\\v14.15.4\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:123639:22)"
+    }
+  }
+}

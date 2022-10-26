@@ -10,9 +10,9 @@ program
   .version(`${require('../package.json').version}`)
   .usage('<command> [options]');
 
-program
-  .command('mr')
-  .description('make a mr to target-repo')
-  .action(() => require('../lib/pr.js')());
+// program
+//   .command('mr')
+//   .description('make a mr to target-repo')
+//   .action(() => require('../lib/pr.js')());
 
 program.parse(process.argv);
